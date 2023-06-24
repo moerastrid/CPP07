@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/07 16:48:07 by ageels        #+#    #+#                 */
-/*   Updated: 2023/06/24 14:40:10 by astrid        ########   odam.nl         */
+/*   Updated: 2023/06/24 14:50:26 by astrid        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,6 @@ int main(void) {
 	display(cats[1]);
 	toupper(names[1]);
 	display(count[2]);
-	my_iter(names, 2, &display);
+	my_iter(names, 2, &(display<std::string>));
+	my_iter(cats, 2, &(display<std::string>));
 }
