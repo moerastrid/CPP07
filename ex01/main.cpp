@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/07 16:48:07 by ageels        #+#    #+#                 */
-/*   Updated: 2023/06/24 14:50:26 by astrid        ########   odam.nl         */
+/*   Updated: 2023/06/26 17:25:52 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,18 @@ int main(void) {
 	for (int i(0); i < len; i++) {
 		std::cout << names[i] << std::endl;
 	}
-	my_iter(names, len, &toupper);
+	iter(names, len, &toupper);
 	for (int i(0); i < len; i++) {
 		std::cout << names[i] << std::endl;
 	}
-	my_iter(names, len, &tolower);
+	iter(names, len, &tolower);
 	for (int i(0); i < len; i++) {
 		std::cout << names[i] << std::endl;
 	}
 	for (int i(0); i < len; i++) {
 		std::cout << count[i] << std::endl;
 	}
-	my_iter(count, len, &negative);
+	iter(count, len, &negative);
 	for (int i(0); i < len; i++) {
 		std::cout << count[i] << std::endl;
 	}
@@ -65,6 +65,8 @@ int main(void) {
 	display(cats[1]);
 	toupper(names[1]);
 	display(count[2]);
-	my_iter(names, 2, &(display<std::string>));
-	my_iter(cats, 2, &(display<std::string>));
+	iter(names, 2, &(display<std::string>));
+	iter(cats, 2, &(display<std::string>));
+	int *nullie = NULL;
+	iter(nullie, 0, &(display<int>));
 }
