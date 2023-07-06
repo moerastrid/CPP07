@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/07 16:48:07 by ageels        #+#    #+#                 */
-/*   Updated: 2023/06/26 17:25:52 by ageels        ########   odam.nl         */
+/*   Updated: 2023/07/06 20:34:47 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,18 @@ int main(void) {
 	for (int i(0); i < len; i++) {
 		std::cout << names[i] << std::endl;
 	}
-	iter(names, len, &toupper);
+	iter(names, len, toupper);
 	for (int i(0); i < len; i++) {
 		std::cout << names[i] << std::endl;
 	}
-	iter(names, len, &tolower);
+	iter(names, len, tolower);
 	for (int i(0); i < len; i++) {
 		std::cout << names[i] << std::endl;
 	}
 	for (int i(0); i < len; i++) {
 		std::cout << count[i] << std::endl;
 	}
-	iter(count, len, &negative);
+	iter(count, len, negative);
 	for (int i(0); i < len; i++) {
 		std::cout << count[i] << std::endl;
 	}
@@ -65,8 +65,8 @@ int main(void) {
 	display(cats[1]);
 	toupper(names[1]);
 	display(count[2]);
-	iter(names, 2, &(display<std::string>));
-	iter(cats, 2, &(display<std::string>));
+	iter(names, 2, display);
+	iter(cats, 2, display);
 	int *nullie = NULL;
-	iter(nullie, 0, &(display<int>));
+	iter(nullie, 0, display);
 }

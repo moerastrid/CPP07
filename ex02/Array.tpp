@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/06 16:58:47 by ageels        #+#    #+#                 */
-/*   Updated: 2023/07/06 19:29:21 by ageels        ########   odam.nl         */
+/*   Updated: 2023/07/06 21:08:36 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,38 +17,42 @@
 
 template <typename T>
 void	Array<T>::message(std::string str) const {
+	(void)str;
 	std::cout << "\033[1;33m" << "Array - " << str << "\033[0m" << std::endl;
 }
 
 template <typename T>
 Array<T>::Array() {
 	_size = 0;
+	_array = NULL;
 	message("default constructor");
 }
 
 template <typename T>
 Array<T>::Array(unsigned int n) {
-	_array = new T[n];
+	_array = new T[n]();
 	_size = n;
 	message("constructor(n)");
 }
 
 template <typename T>
 Array<T>::~Array() {
-	delete _array;
+	delete[] _array;
 	message("default destructor");
 }
 
 template <typename T>
 Array<T>::Array(const Array &src) {
 	message("copy constructor");
+	_array = NULL;
 	*this = src;
 }
 
 template <typename T>
 Array<T> &Array<T>::operator=(const Array &src) {
 	_size = src.size();
-	_array = new T[_size];
+	delete[] _array;
+	_array = new T[_size]();
 	for (unsigned int i(0); i < _size; i++) {
 		_array[i] = src[i];
 	}
