@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/06 15:45:59 by ageels        #+#    #+#                 */
-/*   Updated: 2023/07/06 21:08:25 by ageels        ########   odam.nl         */
+/*   Updated: 2023/07/06 21:20:44 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 #include "Test.hpp"
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 
-int main() {
+
+void	other(void) {
 	Array<int> testint(5);
 	std::cout << testint << std::endl;
 
@@ -67,10 +69,14 @@ int main() {
 		unsigned int * a = new unsigned int();
 		Array<int> subject_example(*a);
 		std::cout << "size subject example : " << subject_example.size() << std::endl;
+		delete a;
 		subject_example[0] = 0;
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
-	//while(1);
+}
+
+int main() {
+	other();
 	return (0);
 }

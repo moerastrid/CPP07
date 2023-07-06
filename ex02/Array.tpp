@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/06 16:58:47 by ageels        #+#    #+#                 */
-/*   Updated: 2023/07/06 21:08:36 by ageels        ########   odam.nl         */
+/*   Updated: 2023/07/06 21:16:35 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 template <typename T>
 void	Array<T>::message(std::string str) const {
 	(void)str;
-	std::cout << "\033[1;33m" << "Array - " << str << "\033[0m" << std::endl;
+	//std::cout << "\033[1;33m" << "Array - " << str << "\033[0m" << std::endl;
 }
 
 template <typename T>
