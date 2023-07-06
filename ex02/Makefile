@@ -6,18 +6,18 @@
 #    By: ageels <ageels@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/06/06 15:41:36 by ageels        #+#    #+#                  #
-#    Updated: 2023/06/26 16:46:02 by ageels        ########   odam.nl          #
+#    Updated: 2023/07/06 19:05:22 by ageels        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Iter
+NAME = Array
 
 FLAGS = -I. -Wall -Werror -Wextra -std=c++98
 
-HDR = Array.hpp
-
-SRC = main.cpp \
+HDR = Array.hpp \
 	Array.tpp
+
+SRC = main.cpp
 
 OBJ_DIR = obj
 
