@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/07 16:48:07 by ageels        #+#    #+#                 */
-/*   Updated: 2023/07/06 20:34:47 by ageels        ########   odam.nl         */
+/*   Updated: 2023/07/11 12:08:38 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,14 @@ void negative(int &num) {
 }
 
 template<typename T>
-void display(T anything) {
+void display(const T anything) {
 	std::cout << "Displaying : " << anything << std::endl;
 }
 
 int main(void) {
 	int len = 3;
 	int count[] = {1, 2, 3};
+	const int constcount[] = {4, 5, 6};
 	std::string names[] = {"Astrid", "Riek", "Jeroen"};
 	for (int i(0); i < len; i++) {
 		std::cout << names[i] << std::endl;
@@ -65,8 +66,10 @@ int main(void) {
 	display(cats[1]);
 	toupper(names[1]);
 	display(count[2]);
+	display(constcount[1]);
 	iter(names, 2, display);
 	iter(cats, 2, display);
+	iter(constcount, 3, display);
 	int *nullie = NULL;
 	iter(nullie, 0, display);
 }

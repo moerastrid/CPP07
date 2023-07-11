@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/06 15:45:59 by ageels        #+#    #+#                 */
-/*   Updated: 2023/07/06 21:20:44 by ageels        ########   odam.nl         */
+/*   Updated: 2023/07/11 12:26:23 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,15 @@
 #include <string>
 #include <stdlib.h>
 
+void	extra(void) {
+	try {
+		Array<Test> empty;
+		//Array<int> empty(-10000);
+		std::cout << empty << std::endl;
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+}
 
 void	other(void) {
 	Array<int> testint(5);
@@ -77,6 +86,7 @@ void	other(void) {
 }
 
 int main() {
-	other();
+	extra();
+	//other();
 	return (0);
 }

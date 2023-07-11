@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/06 15:47:43 by ageels        #+#    #+#                 */
-/*   Updated: 2023/07/06 19:18:35 by ageels        ########   odam.nl         */
+/*   Updated: 2023/07/11 12:17:05 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Array {
 
 	public :
 		Array();
-		Array(unsigned int n);
+		explicit Array(unsigned int n);
 		~Array();
 		Array(const Array &src);
 

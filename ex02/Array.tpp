@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/06 16:58:47 by ageels        #+#    #+#                 */
-/*   Updated: 2023/07/06 21:16:35 by ageels        ########   odam.nl         */
+/*   Updated: 2023/07/11 12:28:34 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 template <typename T>
 void	Array<T>::message(std::string str) const {
 	(void)str;
-	//std::cout << "\033[1;33m" << "Array - " << str << "\033[0m" << std::endl;
+	std::cout << "\033[1;33m" << "Array - " << str << "\033[0m" << std::endl;
 }
 
 template <typename T>
@@ -30,6 +30,8 @@ Array<T>::Array() {
 
 template <typename T>
 Array<T>::Array(unsigned int n) {
+	if (n == 0)
+		throw (outOfBoundException());
 	_array = new T[n]();
 	_size = n;
 	message("constructor(n)");
@@ -78,13 +80,16 @@ unsigned int Array<T>::size(void) const {
 
 template <typename T>
 const char * Array<T>::outOfBoundException::what() const throw() {
-	return ("Array index out of bounds");
+	return ("\033[1;31mArray index out of bound\033[0m");
 }
 
 template <typename T>
 std::ostream &operator<<(std::ostream &o, const Array<T> &src) {
+	if (src.size() == 0) {
+		o << "array : []";
+		return (o);
+	}
 	o << "array : [";
-	(void)src;
 	for (unsigned int i(0); i < src.size() - 1; i++) {
 		o << src[i] << ", ";
 	}
